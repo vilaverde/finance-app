@@ -1,0 +1,23 @@
+default: &default
+ adapter: postgresql
+ encoding: unicode
+ host: db
+ username: postgres
+ password:
+ pool: 5
+
+development:
+ <<: *default
+ database: finance-app_development
+
+test:
+ <<: *default
+ database: finance-app_test
+
+production:
+ <<: *default
+ database: finance-app
+ username: <%= ENV["DB_USER"] %>
+ password: <%= ENV["DB_PASSWORD"] %>
+
+
