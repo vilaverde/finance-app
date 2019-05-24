@@ -61,6 +61,7 @@ RSpec.configure do |config|
 
   # Custom spec helpers
   config.include RequestSpecHelper, type: :request
+  config.include TokenAuthSpecHelper, type: :request
 end
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
